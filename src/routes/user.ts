@@ -1,38 +1,36 @@
 import { Router } from "express";
 
-// data
+// data (it acts like your DataBase)
 const users = [
   { id: 1, name: "Andrea", age: 3 },
   { id: 2, name: "Tom", age: 4 },
   { id: 3, name: "Gabriel", age: 5 },
 ];
 
-//code here
+
+// controllers
 const router = Router();
 
-// get all users
+// get all users. the full endpoint of this becomes /users
 router.get("/", (req, res) => {
   res.json(users);
 });
 
-// services
-const getUser = (userId: number) => {
-  // return the user by userId from users
-  const user = users.find((user) => user.id === userId);
-  return user;
-};
 
-// controller
-// get user by id
+
+// get user by id. the full endpoint of this becomes /users/:id
 router.get("/:id", (req, res) => {
   const user = users.find((user) => user.id === Number(req.params.id));
   res.json(user);
 });
 
-// create new user
 
-// delete user
+/**
+ * TODO:
+ * 1. Create new user
+ * 2. Delete user
+ * 3. Update user information
+*/
 
-// update user information
 
 export default router;

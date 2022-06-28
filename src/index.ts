@@ -8,6 +8,6 @@ app.use(Express.json());
 dotenv.config();
 
 // routes here
-app.use("/user", userRouter);
+app.use("/users", userRouter);
 
 app.listen(3300, () => console.log("running"));
